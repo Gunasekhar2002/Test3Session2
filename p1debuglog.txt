@@ -1,1 +1,79 @@
+ gcc -g p1final.c; ./a.out
+enter num1:1
+enter den1:2
+enter num2:1
+enter den2:4
+sum of fraction is:
+1/2+1/4=6/8 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8d3: file p1final.c, line 25.
+(gdb) run
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:25
+25  {
+(gdb) n
+27    input(&n1,&d1,&n2,&d2);
+(gdb) s
+input (num1=0x7ffc703aa740, den1=0x7ffc703aa74c, num2=0x7ffc703aa744, 
+    den2=0x7ffc703aa750) at p1final.c:4
+4     printf("enter num1:");
+(gdb) n
+5     scanf("%d",num1);
+(gdb) n
+enter num1: 1
+6      printf("enter den1:");
+(gdb) n
+7     scanf("%d",den1);
+(gdb) n
+enter den1: 2
+8      printf("enter num2:");
+(gdb) n
+9     scanf("%d",num2);
+(gdb) n
+enter num2:4
+10     printf("enter den2:");
+(gdb) n
+11    scanf("%d",den2);
+(gdb) n
+enter den2: 4
+13  }
+(gdb) n
+main () at p1final.c:28
+28    add(n1,d1,n2,d2,&n3,&d3);
+(gdb) s
+add (num1=1, den1=2, num2=4, den2=4, num3=0x7ffc703aa748, den3=0x7ffc703aa754)
+    at p1final.c:16
+16    *num3=num1*den2+num2*den1;
+(gdb) n
+17    *den3=den1*den2;
+(gdb) n
+18  }
+(gdb) n
+main () at p1final.c:29
+29    output(n1,d1,n2,d2,n3,d3);
+(gdb) n
+sum of fraction is:
+30    return 0;
+(gdb) n
+31  }(gdb) c
+Continuing.
+1/2+4/4=12/8[Inferior 1 (process 421) exited normally]
+(gdb) 
