@@ -26,8 +26,15 @@ int find_largest(int n,int a[n])
   
 }
 void out_put(int n, int a[n], int largest)
-{
-  printf("largest value in the array is %d",a[0]);
+{ 
+  int index;
+  for(int i=0;i<n;i++)
+    {
+      if (a[i]>largest)
+        largest=a[i];
+      index=i;
+    }
+  printf("largest value in the array is %d at index %d",largest,index);
 }
 int main()
 {
