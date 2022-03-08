@@ -13,10 +13,10 @@ Fraction input_fraction()
 Fraction  Largest_fraction(Fraction f1,Fraction f2,Fraction f3)
 {
   Fraction smallest;
-    int cd=f1.den*f2.den*f3.den;
-    int f1num=(f1.num*cd)/f1.den;
-    int f2num=(f2.num*cd)/f2.den;
-    int f3num=(f3.num*cd)/f3.den;
+    
+    float f1num=(f1.num)/f1.den;
+    float f2num=(f2.num)/f2.den;
+    float f3num=(f3.num)/f3.den;
     if(f1.num<f2.num && f1.num<f3.num)
     {
         smallest= f1;
