@@ -14,7 +14,7 @@ Fraction input_fraction()
 }
 Fraction add_fractions(Fraction f1, Fraction f2)
 {
-  int sum;
+  (int) Fraction sum; 
   sum=(f1.num/f1.den)+(f2.num/f2.den);
 }
 void output(Fraction f1, Fraction f2,Fraction sum)

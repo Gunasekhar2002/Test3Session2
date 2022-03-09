@@ -1,35 +1,31 @@
 #include<stdio.h>
 #include<string.h>
-void input_string(char *string)
+void inputs(char *str)
 {
-  printf("enter a string:");
-  scanf("%[^n]s",string);
-  
+    printf("enter a string:");
+    scanf("%s",str);
 }
-int count_words(char *string)
+int count_words(char *str)
 {
-  int no_words=1,i;
-   	for(i = 0; string[i] != '\0'; i++)
-	{
-		if(string[i] == ' ' || string[i] == '\n' || string[i] == '\t')
-		{
-			no_words++;	
-		} 
-	}	
-  return no_words;
+    int i,no_words=0;
+    for (i=0;str[i]!='\0';i++)
+    {
+        if (str[i]==' ')
+        {
+            no_words++;
+        }
+    }
+        return no_words;
 }
-void output(char *string, int no_words)
-{ 
- 
-  printf("the number of words in a string %s is %d",string,no_words);
-  }
-int main()
+void output(char *str,int no_words)
 {
-  
-  char str;
-  int countwrds;
-  input_string(&str);
-  countwrds=count_words(&str);
-  output(&str,countwrds);
-  return 0;
+    printf("no of words in the given string is %d",no_words+1);
+}
+int main(){
+    char s;
+    int count;
+    inputs(&s);
+    count=count_words(&s);
+    output(&s,count);
+    return 0;
 }

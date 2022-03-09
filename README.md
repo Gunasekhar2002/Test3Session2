@@ -62,7 +62,7 @@
 	<br> int find_gcd(int a, int b);
 	<br> Fraction input_fraction();
 	<br> Fraction add_fractions(Fraction f1, Fraction f2)
-	<br> void output(Fraction f1, Fraction f2, Fraction f3, Fraction sum)
+	<br> void output(Fraction f1, Fraction f2, Fraction sum)
 	
 <br> 8. Write program to add n fractions
 	<br> struct _fraction 
