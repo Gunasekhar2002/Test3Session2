@@ -1,1 +1,90 @@
+ gcc -g p7final.c; ./a.out
+enter the value of n
+1 2
+enter the value of n
+3 4
+1/2+3/4=1.000000 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+ gcc -g p7final.c; ./a.out
+enter the numerator and denominator value
+1 1
+enter the numerator and denominator value
+2 1
+1/1+2/1=3.000000 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x854: file p7final.c, line 30.
+(gdb) r
+Starting program: /home/runner/Test3Session2-14/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p7final.c:30
+30      f1=input_fraction();
+(gdb) s
+input_fraction () at p7final.c:7
+7   {
+(gdb) n
+9     printf("enter the numerator and denominator value\n");
+(gdb) n
+enter the numerator and denominator value
+10    scanf("%d %d",&f1.num,&f1.den);
+(gdb) n
+        1 1
+11    return f1;
+(gdb) n
+12  }
+(gdb) n
+main () at p7final.c:31
+31      f2=input_fraction();
+(gdb) s
+input_fraction () at p7final.c:7
+7   {
+(gdb) n
+9     printf("enter the numerator and denominator value\n");
+(gdb) n
+enter the numerator and denominator value
+10    scanf("%d %d",&f1.num,&f1.den);
+(gdb) n
+        2 1
+11    return f1;
+(gdb) n
+12  }
+(gdb) n
+main () at p7final.c:33
+33      sum=add_fractions(f1,f2);
+(gdb) n
+34      output(f1,f2,sum);
+(gdb) s
+output (f1=..., f2=..., sum=...) at p7final.c:24
+24      result=sum.num/sum.den;
+(gdb) n
+25  printf("%d/%d+%d/%d=%f",f1.num,f1.den,f2.num,f2.den,result);
+(gdb) n
+26    }
+(gdb) n
+main () at p7final.c:35
+35      return 0;
+(gdb) c
+Continuing.
+1/1+2/1=3.000000

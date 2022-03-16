@@ -12,37 +12,37 @@ Fraction input_fraction()
 }
 Fraction  Largest_fraction(Fraction f1,Fraction f2,Fraction f3)
 {
-  Fraction smallest;
+  Fraction largest;
     
     float f1num=(f1.num)/f1.den;
     float f2num=(f2.num)/f2.den;
     float f3num=(f3.num)/f3.den;
     if(f1.num<f2.num && f1.num<f3.num)
     {
-        smallest= f1;
+       largest= f1;
     }
     else if(f2.num<f3.num)
     {
-        smallest=f2;
+        largest=f2;
     }
     else
     {
-        smallest=f3;
+        largest=f3;
     }
 }
-void output(Fraction f1,Fraction f2,Fraction f3,Fraction smallest)
+void output(Fraction f1,Fraction f2,Fraction f3,Fraction largest)
 {
-    if(f1.num==smallest.num && f1.den==smallest.den)
+    if(f1.num==largest.num && f1.den==largest.den)
     {
-        printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,smallest.num,smallest.den);
+        printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
     }
-    else if(f2.num==smallest.num && f2.den==smallest.den)
+    else if(f2.num==largest.num && f2.den==largest.den)
     {
-         printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,smallest.num,smallest.den);
+         printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
     }
     else
     {
-         printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,smallest.num,smallest.den);
+         printf("the largest fraction among %d/%d , %d/%d and %d/%d is %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den,largest.num,largest.den);
     }
 }
 int main()
